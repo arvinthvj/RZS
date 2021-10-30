@@ -42,3 +42,15 @@ h2{
 .ant-input-search-button{
     height: 49px !important;
 }
+.ant-popover{
+    width: 598px;
+    overflow-y: scroll;
+    max-height: 286px;
+}
+.ant-popover::-webkit-scrollbar {
+    display: none;
+}
+.ant-card{
+    display: flex !important;
+    width: 100% !important;
+}

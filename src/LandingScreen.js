@@ -3,8 +3,9 @@ import "./landing.css";
 import { Input, Space } from "antd";
 import "antd/dist/antd.css";
 import { Tag } from "antd";
-import { Popover, a } from "antd";
+import { Popover} from "antd";
 import { Card } from "antd";
+
 
 const { Search } = Input;
 const { Meta } = Card;
@@ -30,7 +31,7 @@ function LandingScreen(props) {
   }
   function filterTheFoodItem(searchKeyword) {
     let  filteredNonVegItemsBasedOnKeyword = props.all_data.reduce((accumulator, objectInCurrentLoop) =>{
-    let nonvegsSearch = objectInCurrentLoop.offer_available.non_veg.filter(f=> {return f.food_name.includes(searchKeyword)})
+    let nonvegsSearch = objectInCurrentLoop.menu_available.non_veg.filter(f=> {return f.food_name.includes(searchKeyword)})
         accumulator.push(...nonvegsSearch)
         return accumulator
     },[])

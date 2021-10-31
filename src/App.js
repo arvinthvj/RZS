@@ -1,15 +1,28 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useEffect } from "react";
 import LandingScreen from "./LandingScreen";
-import foodData from "./backend";
-
-
+import axios from 'axios';
+// import foodData from "./backend";
+import { useEffect, useState } from "react";
 
 function App() {
+var [allRestaurantDataWithMenus ,setAllRestaurantDataWithMenus] = useState([]);
+  useEffect(()=>{
+
+    async function getFoodData(){
+        var foodData = await axios.get("https://rcz-backend-arvinth.herokuapp.com/api/all-food-data");
+        console.log(foodData.data);
+        setAllRestaurantDataWithMenus(foodData.data)
+    }
+    debugger
+    getFoodData()
+    }, [])
+
+
+
   return (
     <div className='App'>
-      <LandingScreen all_data={foodData}/>
+      <LandingScreen all_data={allRestaurantDataWithMenus}/>
     </div>
   );
 }

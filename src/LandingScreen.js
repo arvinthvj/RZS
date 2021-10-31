@@ -13,7 +13,8 @@ function LandingScreen(props) {
   var [popUpVisible, setPopupVisible] = useState(false);
   var [clickedTagName, setClickedTagName] = useState("");
   var [isTextInsideSearchInput, setIsTextInsideSearchInput] = useState(false);
-  var [capturedSearchText , setCapturedSearchText] = useState("")
+  var [capturedSearchText, setCapturedSearchText] = useState("");
+  var [filteredFoodBasedOnSearchInput ,setFilteredFoodBasedOnSearchInput] = useState([]);
 
   let zomatoBackground =
     "https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png";
@@ -25,11 +26,15 @@ function LandingScreen(props) {
     setPopupVisible(false);
   }
   function handleTagsClick(nameoftag) {
-    debugger;
     setClickedTagName(nameoftag);
   }
-  function filterTheFoodItem(searchKeyword){
-    
+  function filterTheFoodItem(searchKeyword) {
+    let  filteredNonVegItemsBasedOnKeyword = props.all_data.reduce((accumulator, objectInCurrentLoop) =>{
+    let nonvegsSearch = objectInCurrentLoop.offer_available.non_veg.filter(f=> {return f.food_name.includes(searchKeyword)})
+        accumulator.push(...nonvegsSearch)
+        return accumulator
+    },[])
+    setFilteredFoodBasedOnSearchInput(filteredNonVegItemsBasedOnKeyword);
   }
 
   function createContentForPopup() {
@@ -49,25 +54,25 @@ function LandingScreen(props) {
           </div>
         ) : (
           <div>
-
-            
-            <Card
-              hoverable
-              style={{ width: 240 }}
-              cover={
-                <img
-                  alt='example'
-                  src='https://b.zmtcdn.com/data/pictures/9/19341909/01c361be49104bfce556f3360879c13a_o2_featured_v2.jpg?fit=around%7C108%3A108&crop=108%3A108%3B%2A%2C%2A'
-                />
-              }
-            >
-              <Meta
-                title='Europe Street beat'
-                description='www.instagram.com'
-              />
-            </Card>
-            
-            
+            {filteredFoodBasedOnSearchInput.map((e) => (
+              <div>
+                <Card
+                  hoverable
+                  style={{ width: 240 }}
+                  cover={
+                    <img
+                      alt='example'
+                      src='https://b.zmtcdn.com/data/pictures/9/19341909/01c361be49104bfce556f3360879c13a_o2_featured_v2.jpg?fit=around%7C108%3A108&crop=108%3A108%3B%2A%2C%2A'
+                    />
+                  }
+                >
+                  <Meta
+                    title={e.food_name}
+                    description={e.price}
+                  />
+                </Card>
+              </div>
+            ))}
           </div>
         )}
       </div>
@@ -92,8 +97,8 @@ function LandingScreen(props) {
             >
               <Search
                 onChange={(e) => {
-                  debugger
-                  filterTheFoodItem(e.currentTarget.value)
+                  debugger;
+                  filterTheFoodItem(e.currentTarget.value);
                   setIsTextInsideSearchInput(true);
                 }}
                 // value = {clickedTagName}

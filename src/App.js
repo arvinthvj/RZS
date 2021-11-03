@@ -3,6 +3,13 @@ import "./App.css";
 import LandingScreen from "./LandingScreen";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import CarryForwarded from "./CarryForwarded";
 
 function App() {
   var [allRestaurantDataWithMenus, setAllRestaurantDataWithMenus] = useState([]);
@@ -14,14 +21,31 @@ function App() {
       console.log(foodData.data);
       setAllRestaurantDataWithMenus(foodData.data);
     }
-    debugger;
+    
     getFoodData();
   }, []);
 
   return (
-    <div className='App'>
-      <LandingScreen all_data={allRestaurantDataWithMenus} />
-    </div>
+    <Router>
+      <div className='App'>
+
+<Switch>
+          <Route path="/" exact>
+            <LandingScreen all_data={allRestaurantDataWithMenus} />
+          </Route>
+        </Switch>
+
+
+        <Switch>
+
+          <Route path="/category-nv">
+<CarryForwarded/>
+          </Route>
+
+        </Switch>
+
+      </div>
+    </Router>
   );
 }
 

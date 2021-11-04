@@ -52,10 +52,14 @@ h2{
     width: 100% !important;
 }
 
+.navBarMainContainer{
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .navBarProfile{
     display: flex;
-    position: absolute;
-    /* top: 0; */
-    right: 39px;
-    top: 26px;
+    align-items: center;
 }

@@ -1,9 +1,13 @@
 import React from 'react';
-
+import NavBarForCarryForwardedPage from './NavBarForCarryForwardedPage';
+import "./carry.css"
 function CarryForwarded(props) {
+    
     return (
-        <div>
-            Hi this is carry forwarded Page
+        <div className = "carryForwarded_main_container">
+            <NavBarForCarryForwardedPage all_data={props.all_data} />
+            {/* <BreadCrumbsCarryForwardedPage />
+            <CardsForCarryForwardedPage /> */}
         </div>
     );
 }

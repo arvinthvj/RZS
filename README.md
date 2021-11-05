@@ -3,17 +3,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This is being created by me to check my skills that sustain on handling a single project by own.
 
-## UI Libraries Used 
+## UI Libraries Used `Ant UI`
 
 Ant UI(4.17.0-alpha.9)
 
-## Redux(version--4.1.2) and React-Redux(Hooks version--7.2.6) Implemented 
+## Redux and React-Redux
 
-This Project includes Redux, which is effectively used by the react-redux package throughout the react app.
+This Project includes Redux(version--4.1.2), which is effectively used by the react-redux(Hooks version--7.2.6) package throughout the react app.
 
-## Authentication -- Firebase(version--9.2.0)
+## Authentication `Firebase-Auth`
 
-The project is built on the context of the Firebase 9.2.0 and is integrated with a Sign-In with Google provider
+The project is built on the context of the Firebase 9.2.0 and is integrated with a 'Sign-In with Google provider' pop-up.
 
 ### `npm start`
 
@@ -38,13 +38,12 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Deployment -- Firebase(version--9.2.0)
+## Deployment `Firebase`
 
-This Project has been initially deployed in Firebase platform and it's being the same.
+This Project has been initially deployed in Firebase(version--9.2.0) platform and it's being the same.
 
-### Backend For this project
+## Backend `Node.js` `Express.js` 
 
-The backend is being served by Noe.js and Express.js. Firebase is integrated with them
+The backend for this project is being served by Node.js and Express.js . Firebase is integrated with them to provide the DB service.
 
-# React-Zomato-Clone
-# RZS
+# Zomato-Clone

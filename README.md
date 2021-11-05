@@ -1,7 +1,7 @@
 # Context of this Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-This is being created by myself to check my skills that sustain on handling a single project by own.
+This is being created by myself to check my skills that sustain on handling a whole project by own.
 
 ## UI Libraries Used `Ant UI`
 

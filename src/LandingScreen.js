@@ -92,7 +92,8 @@ function LandingScreen(props) {
     <div className='Landing_zomatoBg'>
       <img src={zomatoBackground}></img>
       <div className='landing_overTheImageContainer'>
-      <UserProfileUI logInData = {props.logInData}/>
+      {/* <UserProfileUI logInData = {props.logInData}/> */}
+      <UserProfileUI />
         <h1 className='landing_logo_text'>zomato</h1>
         <h2>Discover the best food & drinks in Erode</h2>
         <div className='landing_input_holder'>

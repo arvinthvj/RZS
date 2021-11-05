@@ -14,12 +14,18 @@ import {
   signInWithPhoneNumber,
 } from "firebase/auth";
 import { initializeApp } from "firebase/app";
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from 'redux'
+import { actionCreators } from "./state/index"
 
 const provider = new GoogleAuthProvider();
 // import {app} from './firebaseConfig.js'
 
 function App() {
-const [login, setLogin] = useState({});
+const state = useSelector((state) => state.bank);
+const dispatch = useDispatch();
+const { userForProfileUI } = bindActionCreators(actionCreators, dispatch);
 var [allRestaurantDataWithMenus, setAllRestaurantDataWithMenus] = useState([]);
   const firebaseConfig = {
     apiKey: "AIzaSyD3_64wW5imeZMYBPp-Lp4Izi-3a_zczUs",
@@ -41,7 +47,7 @@ var [allRestaurantDataWithMenus, setAllRestaurantDataWithMenus] = useState([]);
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         // The signed-in user info.
-        setLogin(result)
+        userForProfileUI(result)
         const user = result.user;
         // ...
       })
@@ -77,8 +83,8 @@ var [allRestaurantDataWithMenus, setAllRestaurantDataWithMenus] = useState([]);
       <div className='App'>
         <Switch>
           <Route path='/' exact>
-            <LandingScreen all_data={allRestaurantDataWithMenus} logInData = {login} />
             
+           <LandingScreen all_data={allRestaurantDataWithMenus} />
             <div className='sign-in-button'></div>
           </Route>
         </Switch>

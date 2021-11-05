@@ -15,6 +15,14 @@ This Project includes Redux(version--4.1.2), which is effectively used by the re
 
 The project is built on the context of the Firebase 9.2.0 and is integrated with a 'Sign-In with Google provider' pop-up.
 
+## Deployment `Firebase`
+
+This Project has been initially deployed in Firebase(version--9.2.0) platform and it's being the same.
+
+## Backend `Node.js` `Express.js` 
+
+The backend for this project is being served by Node.js and Express.js . Firebase is integrated with them to provide the DB service.
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -38,12 +46,5 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Deployment `Firebase`
-
-This Project has been initially deployed in Firebase(version--9.2.0) platform and it's being the same.
-
-## Backend `Node.js` `Express.js` 
-
-The backend for this project is being served by Node.js and Express.js . Firebase is integrated with them to provide the DB service.
 
 # Zomato-Clone

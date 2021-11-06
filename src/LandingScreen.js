@@ -64,7 +64,7 @@ function LandingScreen(props) {
         ) : (
           <div>
             {filteredFoodBasedOnSearchInput.map((e) => (
-              <div>
+              <div className="landing">
                 <Card
                   hoverable
                   style={{ width: 240 }}

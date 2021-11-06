@@ -77,7 +77,7 @@ function NavBarForCarryForwardedPage(props) {
         ) : (
           <div>
             {filteredFoodBasedOnSearchInput.map((e) => (
-              <div>
+              <div className = "navCarry">
                 <Card
                   hoverable
                   style={{ width: 240 }}

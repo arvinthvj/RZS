@@ -47,7 +47,7 @@ h2{
 .ant-popover::-webkit-scrollbar {
     display: none;
 }
-.ant-card{
+.navCarry .ant-card{
     display: flex !important;
     width: 100% !important;
 }

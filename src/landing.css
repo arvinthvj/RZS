@@ -50,6 +50,7 @@ h2{
 .landing .ant-card{
     display: flex !important;
     width: 100% !important;
+    max-height: 398px !important;
 }
 
 .navBarProfile{

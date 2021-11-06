@@ -13,3 +13,30 @@
     padding: 2%;
     justify-content: space-around;
 }
+.totalcardscarry{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.carryforwardcard{
+    margin: 2%;
+
+}
+
+
+.carryforwardcard .ant-card{
+    width: 319px !important;
+}
+
+.carryminutes{
+    position: absolute;
+    right: 2px;
+    bottom: 197px;
+}
+
+
+.carrymeta .ant-card-meta-detail{
+    display: flex !important;
+    justify-content: space-between !important;
+}

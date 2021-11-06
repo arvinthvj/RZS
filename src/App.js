@@ -39,7 +39,7 @@ function App() {
         <Switch>
 
           <Route path="/category-nv">
-<CarryForwarded/>
+            <CarryForwarded all_data={allRestaurantDataWithMenus}/>
           </Route>
 
         </Switch>

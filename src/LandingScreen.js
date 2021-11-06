@@ -5,12 +5,13 @@ import "antd/dist/antd.css";
 import { Tag } from "antd";
 import { Popover} from "antd";
 import { Card } from "antd";
-
+import { useHistory } from "react-router-dom";
 
 const { Search } = Input;
 const { Meta } = Card;
 
 function LandingScreen(props) {
+  const history = useHistory();
   var [popUpVisible, setPopupVisible] = useState(false);
   var [clickedTagName, setClickedTagName] = useState("");
   var [isTextInsideSearchInput, setIsTextInsideSearchInput] = useState(false);
@@ -35,7 +36,28 @@ function LandingScreen(props) {
         accumulator.push(...nonvegsSearch)
         return accumulator
     },[])
+   let toUnshiftCategory = filteredNonVegItemsBasedOnKeyword[0].food_name.split(" ").map(e=>{
+      if(e.indexOf(searchKeyword) != -1){
+          return e
+      }
+  }).filter(o=>{return o != undefined})[0];
+  let unshiftObj = {
+    food_name : toUnshiftCategory,
+    votes : "100",
+    price : "200",
+    category : "Category"
+  }
+
+    filteredNonVegItemsBasedOnKeyword.unshift(unshiftObj)
     setFilteredFoodBasedOnSearchInput(filteredNonVegItemsBasedOnKeyword);
+  }
+
+  function handleCardClick(uniquecarddata){
+    debugger
+  history.push({ 
+      pathname: '/category-nv',
+      state: uniquecarddata.food_name
+     });
   }
 
   function createContentForPopup() {
@@ -56,7 +78,7 @@ function LandingScreen(props) {
         ) : (
           <div>
             {filteredFoodBasedOnSearchInput.map((e) => (
-              <div>
+              <div className="landingCards" onClick={()=>{handleCardClick(e)}}>
                 <Card
                   hoverable
                   style={{ width: 240 }}
@@ -69,7 +91,7 @@ function LandingScreen(props) {
                 >
                   <Meta
                     title={e.food_name}
-                    description={e.price}
+                    description={e.category ? e.category : e.price }
                   />
                 </Card>
               </div>

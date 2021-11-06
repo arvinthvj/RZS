@@ -5,6 +5,7 @@ import { Carousel } from 'antd'
 import './carry.css'
 import { Rate } from 'antd';
 
+import combineddata from './imagesBackend'
 import NavBarForCarryForwardedPage from './NavBarForCarryForwardedPage';
 // import "./carry.css"
 // import CardsForCarryForwardedPage from './CardsForCarryForwardedPage'
@@ -33,7 +34,7 @@ function CarryForwarded(props) {
 
             let searchedAvailabe = o.menu_available.non_veg.filter(e=>{
                             
-                         return e.food_name.includes(historyCarried.location.state)
+                         return e.food_name.toLowerCase().includes(historyCarried.location.state.toLowerCase())
                     
                     });
             
@@ -43,6 +44,9 @@ function CarryForwarded(props) {
             
             
             }).filter(e=>{return e!= undefined});
+            filteredHotels.forEach(element => {
+                element.imagePath = combineddata[Math.floor(Math.random() *18)]
+            });
             setHotelsBasedOnkeywordData(filteredHotels)
     }, [])
 
@@ -57,7 +61,7 @@ function CarryForwarded(props) {
                         <Card
                             hoverable
                             style={{ width: 240 }}
-                            cover={<img alt="example" src="https://b.zmtcdn.com/data/pictures/3/19477233/ab7c5d08e7c918fff9381eb81cb21f2d_o2_featured_v2.jpg?output-format=webp" />}
+                            cover={<img alt="example" src={o.imagePath} />}
                         >
                             <div className="carryminutes"><Badge count={Math.floor(Math.random() * 30) + " mins"}></Badge></div>
                             <div className="carrymeta">

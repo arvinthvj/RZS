@@ -56,10 +56,28 @@ h2{
     display: flex;
     width: 100vw;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
+    place-items: center !important;
 }
 
 .navBarProfile{
     display: flex;
     align-items: center;
+}
+
+.navbarprofileholder .navBarProfile{
+    top: 8px !important;
+}
+
+.navbarprofileholder .ant-dropdown-trigger{
+    color: black;
+}
+
+
+.navBarProfile > button {
+    border: none;
+    cursor: pointer;
+    width: 85px;
+    height: 32px;
+    background-color: #f1f1f100;
 }

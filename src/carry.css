@@ -40,3 +40,10 @@
     display: flex !important;
     justify-content: space-between !important;
 }
+
+.totalcardscarry .ant-card-cover > img{
+   
+    height: 242px;
+    width: 100%;
+    
+}

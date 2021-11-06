@@ -20,7 +20,7 @@
     color: white ;
     height: 100px;
     font-family: 'Prompt', sans-serif;
-    margin-top: -110px;
+    margin-top: -189px !important;
 }
 
 h2{
@@ -59,4 +59,15 @@ h2{
     /* top: 0; */
     right: 39px;
     top: 26px;
+}
+
+.landing_overTheImageContainer .navBarProfile{
+    color: white;
+}
+
+.landing .ant-card-cover > img{
+   
+    height: 100px;
+    width: 140px;
+
 }

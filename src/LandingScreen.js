@@ -5,13 +5,14 @@ import "antd/dist/antd.css";
 import { Tag } from "antd";
 import { Popover} from "antd";
 import { Card } from "antd";
-
+import { useHistory } from 'react-router-dom';
 import UserProfileUI from "./UserProfileUI";
 
 const { Search } = Input;
 const { Meta } = Card;
 
 function LandingScreen(props) {
+  const history =useHistory()
   var [popUpVisible, setPopupVisible] = useState(false);
   var [clickedTagName, setClickedTagName] = useState("");
   var [isTextInsideSearchInput, setIsTextInsideSearchInput] = useState(false);
@@ -33,7 +34,10 @@ function LandingScreen(props) {
   function handleTagsClick(nameoftag) {
     setClickedTagName(nameoftag);
   }
-
+  function cardOnClick(cardData){
+history.push('/category-nv')
+debugger
+  }
 
   function filterTheFoodItem(searchKeyword) {
     let  filteredNonVegItemsBasedOnKeyword = props.all_data.reduce((accumulator, objectInCurrentLoop) =>{
@@ -64,7 +68,7 @@ function LandingScreen(props) {
         ) : (
           <div>
             {filteredFoodBasedOnSearchInput.map((e) => (
-              <div className="landing">
+              <div className="landing" onClick ={()=>{cardOnClick(e)}}>
                 <Card
                   hoverable
                   style={{ width: 240 }}

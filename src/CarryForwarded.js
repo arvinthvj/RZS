@@ -57,16 +57,16 @@ function CarryForwarded(props) {
         <div className="totalcardscarry">
             {hotelsBasedOnkeywordData.map(o => (
                 <div className="carryforwardcard">
-                    <Badge.Ribbon text={(o.offer_available).split("-")[0] + " off"} placement="start">
+                    <Badge.Ribbon  text={(o.offer_available).split("-")[0] + " off"} placement="start">
                         <Card
                             hoverable
                             style={{ width: 240 }}
                             cover={<img alt="example" src={o.imagePath} />}
                         >
-                            <div className="carryminutes"><Badge count={Math.floor(Math.random() * 30) + " mins"}></Badge></div>
+                            <div className="carryminutes"><Badge  count={Math.floor(Math.random() * 30) + " mins"} ></Badge></div>
                             <div className="carrymeta">
                             <Meta title={o.hotel_name} description={o.average_price_to_order} />
-                            <Meta  description={o.kind_of_food_available} />
+                            <Meta  description={o.kind_of_food_available.split(",")[Math.floor(Math.random() * o.kind_of_food_available.split(",").length)-1]} />
                             </div>
                             <Rate disabled defaultValue={Math.floor(Math.random() *(5-2)+2)} />
                             <Carousel autoplay effect="fade">

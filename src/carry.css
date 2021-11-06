@@ -32,7 +32,7 @@
 .carryminutes{
     position: absolute;
     right: 2px;
-    bottom: 197px;
+    bottom: 214px;
 }
 
 
@@ -46,4 +46,12 @@
     height: 242px;
     width: 100%;
     
+}
+
+.totalcardscarry .ant-card-body{
+    height: 169px;
+}
+
+.carryminutes .ant-badge-multiple-words{
+    background-color: #0000004a !important;
 }

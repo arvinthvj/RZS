@@ -10,7 +10,7 @@ import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import { Avatar, Image } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-
+import UserProfileUI from './UserProfileUI'
 
 
 
@@ -139,12 +139,7 @@ function NavBarForCarryForwardedPage(props) {
   
   </div>
   <div className="navBarProfile">
-  <Avatar src={<Image src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png" style={{ width: 32 }} />} />
-  <Dropdown overlay={menu} trigger={['click']}>
-    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-      Click me <DownOutlined />
-    </a>
-  </Dropdown>
+  <UserProfileUI/>
   </div>
   
 

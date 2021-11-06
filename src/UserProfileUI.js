@@ -10,6 +10,12 @@ import { useDispatch } from "react-redux";
 // import { bindActionCreators } from 'redux'
 
 function UserProfileUI(props) {
+
+
+
+
+
+    
     const user = useSelector((state) => state.userDetails);
     // const dispatch = useDispatch();
     // const { userForProfileUI } = bindActionCreators(actionCreators, dispatch);

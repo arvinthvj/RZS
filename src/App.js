@@ -3,7 +3,7 @@ import "./App.css";
 import LandingScreen from "./LandingScreen";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route,Redirect, Link } from "react-router-dom";
 import CarryForwarded from "./CarryForwarded";
 // import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithPhoneNumber } from "firebase/auth";
 import {
@@ -90,9 +90,13 @@ var [allRestaurantDataWithMenus, setAllRestaurantDataWithMenus] = useState([]);
         </Switch>
 
         <Switch>
+        {/* <Redirect from="/" to="/category-nv" > */}
           <Route path='/category-nv'>
+            
             <CarryForwarded all_data={allRestaurantDataWithMenus} />
+           
           </Route>
+          {/* </Redirect> */}
         </Switch>
       </div>
     </Router>

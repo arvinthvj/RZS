@@ -5,7 +5,9 @@ import { Carousel } from 'antd'
 import './carry.css'
 import { Rate } from 'antd';
 import { Spin, Space } from 'antd';
-
+import { Tag } from 'antd';
+// import { useHistory } from 'react-router-dom';
+import { Breadcrumb } from 'antd';
 import combineddata from './imagesBackend'
 import NavBarForCarryForwardedPage from './NavBarForCarryForwardedPage';
 // import "./carry.css"
@@ -13,11 +15,14 @@ import NavBarForCarryForwardedPage from './NavBarForCarryForwardedPage';
 
 
 const { Meta } = Card;
+const { CheckableTag } = Tag;
 
 
+const tagsData = ['Movies', 'Books', 'Music', 'Sports'];
 
 
 function CarryForwarded(props) {
+    const history = useHistory();
     const contentStyle = {
         height: '50px',
         color: 'black',
@@ -48,10 +53,19 @@ function CarryForwarded(props) {
         filteredHotels.forEach(element => {
             element.imagePath = combineddata[Math.floor(Math.random() * 18)]
         });
-        setHotelsBasedOnkeywordData(filteredHotels)
+        setTimeout(() => {
+            setHotelsBasedOnkeywordData(filteredHotels)
+        }, 1000);
+       
     }, [])
 
-
+function hanldeCarryCardClick(clickedCardObj){
+    debugger
+    history.push({
+        pathname: '/resort',
+        state: clickedCardObj
+      });
+}
     return (
 
         <div>
@@ -64,9 +78,24 @@ function CarryForwarded(props) {
             ) : (
                 <div className="carryForwarded_main_container">
                     <NavBarForCarryForwardedPage all_data={props.all_data} />
+                    <div className="carryBreadCrumbs">
+                            <Breadcrumb>
+                                <Breadcrumb.Item>Home</Breadcrumb.Item>
+                                <Breadcrumb.Item>
+                                    <a href="">Erode Restaurants</a>
+                                </Breadcrumb.Item>
+                                <Breadcrumb.Item>
+                                    <a href="">Non-Veg</a>
+                                </Breadcrumb.Item>
+                                <Breadcrumb.Item>Biryani</Breadcrumb.Item>
+                            </Breadcrumb>
+                    </div>
+                    <div className="carrytags">
+                        
+                    </div>
                     <div className="totalcardscarry">
                         {hotelsBasedOnkeywordData.map(o => (
-                            <div className="carryforwardcard">
+                            <div className="carryforwardcard" onClick={()=>{hanldeCarryCardClick(o)}}>
                                 <Badge.Ribbon text={(o.offer_available).split("-")[0] + " off"} placement="start">
                                     <Card
                                         hoverable
@@ -81,6 +110,8 @@ function CarryForwarded(props) {
                                         <Rate disabled defaultValue={Math.floor(Math.random() * (5 - 2) + 2)} />
                                         <Carousel autoplay effect="fade">
                                             <div>
+                                            <img className="carryCarousalMaxSafety" src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"></img>
+
                                                 <h3 style={contentStyle}>Follows all Max Safety measures to ensure your food is safe</h3>
                                             </div>
                                             <div>

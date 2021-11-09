@@ -1,0 +1,32 @@
+
+.resorttotalpart{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding: 2%;
+    flex-wrap: wrap;
+}
+
+.largeImgs{
+    margin: 1%;
+    max-width: 747px;
+    height: 419px;
+}
+.firstHalf{
+    flex: 0.5;
+}
+
+.smallImgs {
+    height: 200px;
+    width: 329px;
+    margin: 1%;
+}
+.secondHalf{
+    flex: 1;
+}
+
+.align:hover{
+    transform: scale(1.04);
+    transition: .5s;
+
+}

@@ -38,6 +38,7 @@ function LandingScreen(props) {
     setClickedTagName(nameoftag);
   }
   function cardOnClick(cardData) {
+    debugger
     history.push({
       pathname: '/category-nv',
       state: cardData.food_name

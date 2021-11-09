@@ -8,7 +8,7 @@ const combineddata = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBzkVMsEiCWy4LuWBjCCg1cVtHythkOFrbxQ&usqp=CAU",
     "https://www.sandyathome.com/wp-content/uploads/2021/01/chicken-65-biryani-recipe.jpeg",
     "https://theyummydelights.com/wp-content/uploads/2019/08/hyderabadi-biryani-recipe.jpg",
-    "https://lh3.googleusercontent.com/proxy/xx7hlabKoxF2r3B1H4182t8jp9NebQJuxvI2T6zmUjQzWKzLnkGSRwehh1INu1kTu2WNCiLnNMZ3kHpViXHT4mpQzcqm7VMXC-2nkT7IwUwC1DEVdTqJbQEGb5VzSrE95zDUPaPr",
+    "https://recipes.timesofindia.com/thumb/msid-53096628,width-1600,height-900/53096628.jpg",
     "https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/04/21/Pictures/_cb1f1b2e-83b1-11ea-bf89-3b987bd73d6a.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCvqkMj_PXSdyelzVjz29xMCs-H-vAnfnbA&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCvqkMj_PXSdyelzVjz29xMCs-H-vAnfnbA&usqp=CAU",
@@ -19,6 +19,7 @@ const combineddata = [
     "https://kfoods.com/images1/newrecipeicon/bombay-prawns-biryani_14607.jpg",
     "https://kfoods.com/images1/newrecipeicon/bombay-prawns-biryani_14607.jpg",
     "https://www.akilaskitchen.com/wp-content/uploads/2019/03/Prawn-Biryani-using-coconut-milk.jpg",
+    "https://imagevars.gulfnews.com/2021/01/05/Mutton-Biryani-_176d2faa265_large.jpg"
   
   ]
 

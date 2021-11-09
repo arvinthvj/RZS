@@ -18,6 +18,7 @@ import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from 'redux'
 import { actionCreators } from "./state/index"
+import RestaurantView from "./RestaurantView";
 
 const provider = new GoogleAuthProvider();
 // import {app} from './firebaseConfig.js'
@@ -90,13 +91,18 @@ var [allRestaurantDataWithMenus, setAllRestaurantDataWithMenus] = useState([]);
         </Switch>
 
         <Switch>
-        {/* <Redirect from="/" to="/category-nv" > */}
           <Route path='/category-nv'>
             
             <CarryForwarded all_data={allRestaurantDataWithMenus} />
            
           </Route>
-          {/* </Redirect> */}
+        </Switch>
+        <Switch>
+          <Route path='/resort'>
+            
+            <RestaurantView/>
+           
+          </Route>
         </Switch>
       </div>
     </Router>
